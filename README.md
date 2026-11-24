@@ -191,7 +191,7 @@ If browser-based webcam access is unavailable, use the **Local Camera** option p
 
 ### Application Interface
 
-![Application Interface](results/Ui.png)
+![Application Interface](results/UI.png)
 
 ### Qualitative Results
 
