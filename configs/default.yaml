@@ -1,0 +1,11 @@
+models:
+  detector: IDEA-Research/grounding-dino-tiny
+  segmenter: sam2.1_b.pt        # máy yếu/CPU: đổi thành mobile_sam.pt
+  depth: depth-anything/Depth-Anything-V2-Small-hf
+  device: auto                  # auto = tự dùng GPU nếu có
+runtime:
+  max_side: 1024                # CPU: 640
+  box_threshold: 0.3
+  default_prompt: "person, dog, car"
+  default_effect: cutout
+  blur_sigma: 25.0

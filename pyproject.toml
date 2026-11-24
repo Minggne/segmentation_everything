@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scene-studio"
+version = "0.1.0"
+description = "Text-prompted segmentation pipeline: Grounding DINO + SAM 2 + Depth Anything V2"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy", "pillow", "opencv-python-headless", "pyyaml",
+  "torch>=2.6", "transformers>=4.51", "ultralytics>=8.3.0",
+]
+
+[project.optional-dependencies]
+demo = ["gradio>=5.0"]
+api = ["fastapi", "uvicorn[standard]", "python-multipart"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+scene-studio = "scene_studio.apps.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
